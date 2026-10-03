@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,17 +60,21 @@
                     <h1>Sign In</h1>
 
                     <p>
-                        Enter your details to continue.
+                        Enter demo details to explore EduSphere.
                     </p>
                 </div>
 
 
+                <!-- DEMO NOTICE -->
+                <div class="demo-notice">
+                    <strong>Demo Only:</strong>
+                    Do not enter your real email address or password.
+                    This form does not create or verify real accounts.
+                </div>
+
+
                 <!-- DEMO SIGN IN FORM -->
-                <form
-                    action="dashboard.html"
-                    method="GET"
-                    onsubmit="event.preventDefault(); window.location.href='dashboard.html';"
-                >
+                <form id="demo-signin-form">
 
                     <div class="auth-form-group">
                         <label for="signin-email">Email Address</label>
@@ -79,10 +82,8 @@
                         <input
                             type="email"
                             id="signin-email"
-                            name="email"
-                            placeholder="Enter your email"
-                            autocomplete="email"
-                            required
+                            placeholder="Demo only — do not use real email"
+                            autocomplete="off"
                         >
                     </div>
 
@@ -93,18 +94,16 @@
                         <input
                             type="password"
                             id="signin-password"
-                            name="password"
-                            placeholder="Enter your password"
-                            autocomplete="current-password"
-                            required
+                            placeholder="Demo only — do not use real password"
+                            autocomplete="off"
                         >
                     </div>
 
 
                     <div class="signin-options">
                         <label class="remember-label">
-                            <input type="checkbox" name="remember">
-                            Remember me
+                            <input type="checkbox" disabled>
+                            Remember me (demo)
                         </label>
 
                         <a href="contact.html">Need help?</a>
@@ -112,7 +111,7 @@
 
 
                     <button type="submit" class="auth-submit-btn">
-                        Sign In
+                        Sign In (Demo)
                     </button>
 
                 </form>
@@ -162,6 +161,18 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- DEMO FORM: NO DATA IS SENT OR SAVED -->
+    <script>
+        document.getElementById("demo-signin-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            alert("This is a demo form. No information has been submitted or saved.");
+
+            window.location.href = "dashboard.html";
+        });
+    </script>
 
 </body>
 </html>
